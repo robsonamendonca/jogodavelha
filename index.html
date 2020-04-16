@@ -6,18 +6,41 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jogo da Velha</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="css/css.css" rel="stylesheet">
+    <link href="css/nes.min.css" rel="stylesheet" />
 
 </head>
 <body>
-
-    <h1>Jogo da Velha</h1>
+    <p class="space"></p>
+    <h1>JOGO DA VELHA</h1>
 
     <div id="buttons-container">
-        <button id="2-players">2 Jogadores</button>
-        <button id="ai-players">Contra IA</button>
+        <div class="nes-container with-title is-centered">
+            <p class="title"></p>        
+            <p class="space"></p>
+            <button id="2-players"  type="button" class="nes-btn is-primary">2 Jogadores</button> 
+            <p class="space"></p>
+            <button id="ai-players" type="button" class="nes-btn is-success">Contra I.A.</button>
+            <p class="space"></p>
+        </div>
+        <p class="space"></p><p class="space"></p>
+        <p>
+            <div class="social-buttons">
+                <p class="space"></p>
+                <p>Compartilhe ...</p> 
+                <div class="share">
+                    <a href="https://twitter.com/home?status=https://robsonamendonca.itch.io/joga-da-venha-plus Jogo da Velha Plus com um a mais para você se divertir e compartilhar e desafiar seu amigos, colegas e familiares." target="_blank"><i class="nes-icon twitter"></i></a> 
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://robsonamendonca.itch.io/joga-da-venha-plus" target="_blank"><i class="nes-icon facebook"></i></a> 
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://robsonamendonca.itch.io/joga-da-venha-plus&title=&summary=Jogo da Velha Plus com um a mais para você se divertir e compartilhar e desafiar seu amigos, colegas e familiares.&source=" target="_blank"><i class="nes-icon linkedin"></i></a>
+                    <a href="https://api.whatsapp.com/send?text=Jogo%20da%20Velha%20Plus%20com%20um%20a%20mais%20para%20voc%C3%AA%20se%20divertir%20e%20compartilhar%20e%20desafiar%20seu%20amigos,%20colegas%20e%20familiares.%20%20https://robsonamendonca.itch.io/joga-da-venha-plus" target="_blank"><i class="nes-icon whatsapp"></i></a>
+                </div>
+                <p class="space"></p>
+                <a href="https://www.buymeacoffee.com/robsonamendonca" target="_blank"><img src="img/default-violet.webp" alt="Pague-me um café?!" style="height: 51px !important;width: 217px !important;" ></a>
+            </div>
+        </p>
     </div>
 
-    <div id="container">
+    <div id="container" class="hide">
         <div class="box" id="block-1"></div>
         <div class="box" id="block-2"></div>
         <div class="box" id="block-3"></div>
@@ -28,30 +51,33 @@
         <div class="box" id="block-8"></div>
         <div class="box" id="block-9"></div>        
     </div>
-
-    <div id="scoreborad-container">
-        <h2>Placar </h2>
-        <span class="score-box">
-         <span class="x-scoreboard">X:</span>
-         <span class="scoreboard-1"></span>
-        </span>
-
-        <span class="score-box">
-            <span class="o-scoreboard"></span>
-            <span class="scoreboard-2">O:</span>
-        </span>           
+    <div id="container-footer" class="hide">
+        <div class="nes-container with-title is-centered">
+            <p class="title">Placar</p>
+            <div id="scoreborad-container">
+                <a href="#" class="nes-badge is-splited">
+                    <span id="scoreboard-1" class="is-dark">0</span>
+                    <span id="x-scoreboard" >X</span>
+                  </a>
+                  
+                  <a href="#" class="nes-badge is-splited">
+                    <span id="scoreboard-2" class="is-dark">0</span>
+                    <span id="o-scoreboard" >O</span>
+                  </a>    
+            </div>
+            <span id="reset" class="nes-text is-error"> # Recomeçar</span>
+        </div>
     </div>
-
-
     <div class="hide">
-        <div class="x">x</div>
+        <div class="x">X</div>
         <div class="o"></div>
     </div>
 
     <div id="message" class="hide">
-        <p></p>
+        <p class="nes-container is-rounded is-darks">xxx</p>
     </div>
 
     <script src="js/scripts.js"></script>
+
 </body>
 </html>
