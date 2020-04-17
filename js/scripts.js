@@ -34,7 +34,7 @@ for(let i=0; i<boxes.length;i++){
             if(player1 == player2){
                 player1++;
                 if (secondPlayer == "ai-players"){
-                    computerPlay();
+                    computerPlay2();
                     player2++;
                 }
             }else{
@@ -172,7 +172,7 @@ function checkWinCondition(){
         }
     }
 
-    //diagonal
+    //posibility
     if(b1.childNodes.length>0 && b5.childNodes.length>0 && b9.childNodes.length>0){
 
         let b1Child = b1.childNodes[0].className;
@@ -185,7 +185,7 @@ function checkWinCondition(){
             declareWinner("o");//o
         }
     }
-//diagonal
+//posibility
     if(b3.childNodes.length>0 && b5.childNodes.length>0 && b7.childNodes.length>0){
 
         let b3Child = b3.childNodes[0].className;
@@ -217,17 +217,23 @@ function declareWinner(winner){
 
     let scoreboardX = document.querySelector('#scoreboard-1');
     let scoreboardY = document.querySelector('#scoreboard-2');
+    let placarX=0;
+    let placarO=0;
     let msg ="";
 
     if(winner == 'x'){
         scoreboardX.innerHTML = parseInt(scoreboardX.innerHTML) + 1;
         msg ='O jogador "X" venceu!!!';
+        placarX =  parseInt(scoreboardX.innerHTML);
     } else if(winner == 'o'){
         scoreboardY.innerHTML = parseInt(scoreboardY.innerHTML) + 1;
         msg ='O jogador "O" venceu!!!';
+        placarO =  parseInt(scoreboardY.innerHTML);
     } else {
         msg ='Deu velha!!!';
     }
+    //parabens
+    msg = mensagemRank(placarX,placarO,msg);
 
     //exibe a mensagem
     messageText.innerHTML = msg;
@@ -235,6 +241,32 @@ function declareWinner(winner){
     
     //reset 
     resetJogada();
+
+}
+
+
+function mensagemRank(placarX,placarO, msg){
+    //parabenizer e futyramente guardar records
+    if (placarX ==0 && placarO == 10)
+    {
+        return '"O" Parabéns 10! <i class="nes-icon trophy is-large"></i>';
+    }else if (placarX ==10 && placarO == 0){
+        return '"X" Parabéns 10! <i class="nes-icon trophy is-large"></i>';
+    }
+    else if (placarX>placarO && (placarX-placarO)==20){
+        return '"X" Parabéns '+placarX+'! <i class="nes-icon is-large like"></i>';
+    }
+    else if (placarO>placarX && (placarO-placarX)==20){
+        return'"O" Parabéns '+placarO+'! <i class="nes-icon is-large like"></i>';
+    }
+    else if (placarX>placarO && (placarX-placarO)==30){
+            return '"X" Parabéns '+placarX+'! <i class="nes-icon is-large star"></i>';
+    }
+    else if (placarO>placarX && (placarO-placarX)==30){
+            return'"O" Parabéns '+placarO+'! <i class="nes-icon is-large star"></i>';        
+    }else{
+        return msg;
+    }
 
 }
 
@@ -269,7 +301,7 @@ function computerPlay(){
         let randonNumber = Math.floor(Math.random()*5);
         //so preencher se estiver vazio o filtro
         if(boxes[i].childNodes[0] == undefined){
-            if(randonNumber <=1 ){
+            if(randonNumber <=i ){
                 boxes[i].appendChild(cloneO);
                 counter++;
                 break;
@@ -284,4 +316,67 @@ function computerPlay(){
         computerPlay();
     }
 
+}
+
+function computerPlay2(){
+    let cloneO = o.cloneNode(true);
+    counter =0;
+    fliled =0;
+
+    for (let i = 0; i < boxes.length; i++) {
+        let randonNumber = checkValidateWin();
+        //so preencher se estiver vazio o filtro
+        if(boxes[randonNumber].childNodes[0] == undefined){
+            boxes[randonNumber].appendChild(cloneO);
+            counter++;
+            break;
+            //checagem de quantas estao preenchidas
+        }else{
+            fliled++;
+        }        
+    }
+
+    if(counter == 0 && fliled < 9 ){
+        computerPlay();
+    }
+
+}
+
+function checkValidateWin(){
+    let posibility =[[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
+    let contador=0;
+    let position =0;
+    //verificar
+    //posibility
+    for (let i = 0; i < posibility.length; i++) { 
+        for (let j = 0; j < posibility[i].length; j++) { 
+            position = posibility[i][j]-1;
+            if(boxes[position].childNodes[0] != undefined){
+                if(boxes[position].childNodes.length>0){
+                    let bChild = boxes[position].childNodes[0].className;
+                    if(bChild === 'x'){
+                        contador++;
+                    }else{
+                        contador--;
+                    }
+                }else{
+                }       
+            }
+            else{
+            }
+        }
+        if(contador ==2 && position>0){
+            for (let j = 0; j < posibility[i].length; j++) { 
+                position = posibility[i][j]-1;
+                if(boxes[position].childNodes[0] == undefined){
+                    return position;
+                }
+            }
+            position = Math.floor(Math.random()*5);
+        }else{
+            contador=0;
+            position = Math.floor(Math.random()*5);
+        }
+    }
+    return position;
 }
