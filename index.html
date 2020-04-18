@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="css/styles.css">
     <link href="css/css.css" rel="stylesheet">
     <link href="css/nes.min.css" rel="stylesheet" />
-
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="lang/idiomas.js"></script>
+    <script type="text/javascript" src="js/texto.js"></script>
+    <script type="text/javascript" src="js/textoController.js"></script>
 </head>
 <body>
     <p class="space"></p>
-    <h1>JOGO DA VELHA</h1>
+    <h1 class="txth1" >JOGO DA VELHA</h1>
 
     <div id="buttons-container">
         <div class="nes-container with-title is-centered">
@@ -24,21 +27,23 @@
             <p class="space"></p>
         </div>
         <p class="space"></p>
-        <!-- <p class="space"></p>
-        <label for="default_select">Idioma</label>
+        <p class="space"></p>
+
+        <label id='sellang' for="default_select">Idioma</label>
         <div class="nes-select">
-            <select required id="default_select">
+            <select id="tselecao" required id="default_select">
                 <option value="" disabled selected hidden>selecione</option>
-                <option value="ptbr">Português</option>
-                <option value="enus">Inglês</option>
-                <option value="ptes">Espanhol</option>
+                <option value="pt-br">Português</option>
+                <option value="en-us">Inglês</option>
+                <option value="pt-es">Espanhol</option>
             </select>
-        </div> -->
+        </div> 
+
         <p class="space"></p>
         <p>
             <div class="social-buttons">
                 <p class="space"></p>
-                <p>Compartilhe ...</p> 
+                <p id="txtcomp">Compartilhe ...</p> 
                 <div class="share">
                     <a href="https://twitter.com/intent/tweet?text=Jogo da Velha Plus com um a mais para você se divertir e compartilhar e desafiar seu amigos, colegas e familiares.&url=https://robsonamendonca.itch.io/joga-da-venha-plus&original_referer=https://robsonamendonca.itch.io/joga-da-venha-plus" target="_blank"><i class="nes-icon twitter"></i></a> 
                     <a href="https://www.facebook.com/sharer/sharer.php?u=https://robsonamendonca.itch.io/joga-da-venha-plus" target="_blank"><i class="nes-icon facebook"></i></a> 
@@ -46,7 +51,7 @@
                     <a href="https://api.whatsapp.com/send?text=Jogo%20da%20Velha%20Plus%20com%20um%20a%20mais%20para%20voc%C3%AA%20se%20divertir%20e%20compartilhar%20e%20desafiar%20seu%20amigos,%20colegas%20e%20familiares.%20%20https://robsonamendonca.itch.io/joga-da-venha-plus" target="_blank"><i class="nes-icon whatsapp"></i></a>
                 </div>
                 <p class="space"></p>
-                <a href="https://www.buymeacoffee.com/robsonamendonca" target="_blank"><img src="img/busymecoffee-eng.png" alt="Pague-me um café?!" style="height: 51px !important;width: 217px !important;" ></a>
+                <a href="https://www.buymeacoffee.com/robsonamendonca" target="_blank"><img id="txtcoffee" src="img/busymecoffee-eng.png" alt="Pague-me um café?!" style="height: 51px !important;width: 217px !important;" ></a>
             </div>
         </p>
     </div>
@@ -64,7 +69,7 @@
     </div>
     <div id="container-footer" class="hide">
         <div class="nes-container with-title is-centered">
-            <p class="title">Placar</p>
+            <p id="txtplacar" class="title">Placar</p>
             <div id="scoreborad-container">
                 <a href="#" class="nes-badge is-splited">
                     <span id="scoreboard-1" class="is-dark">0</span>

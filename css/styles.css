@@ -129,11 +129,15 @@ h1 {
     margin-right: auto;
     right: 0;
     left: 0;
-    top: 150px;
+    top: 140px;
     width: 320px;
     font-size: 30px;
     background-color: black;
     color: white;
     padding: 20px;
 
+}
+
+.parabens{
+    font-size: 15px !Important;
 }

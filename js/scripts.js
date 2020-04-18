@@ -223,14 +223,14 @@ function declareWinner(winner){
 
     if(winner == 'x'){
         scoreboardX.innerHTML = parseInt(scoreboardX.innerHTML) + 1;
-        msg ='O jogador "X" venceu!!!';
+        msg = mensagemX
         placarX =  parseInt(scoreboardX.innerHTML);
     } else if(winner == 'o'){
         scoreboardY.innerHTML = parseInt(scoreboardY.innerHTML) + 1;
-        msg ='O jogador "O" venceu!!!';
+        msg = mensagemO;
         placarO =  parseInt(scoreboardY.innerHTML);
     } else {
-        msg ='Deu velha!!!';
+        msg =mensagemVelha;
     }
     //parabens
     msg = mensagemRank(placarX,placarO,msg);
@@ -249,21 +249,21 @@ function mensagemRank(placarX,placarO, msg){
     //parabenizer e futyramente guardar records
     if (placarX ==0 && placarO == 10)
     {
-        return '"O" Parabéns 10! <i class="nes-icon trophy is-large"></i>';
+        return 'O '+mensagemPodio10;
     }else if (placarX ==10 && placarO == 0){
-        return '"X" Parabéns 10! <i class="nes-icon trophy is-large"></i>';
+        return 'X '+mensagemPodio10;
     }
     else if (placarX>placarO && (placarX-placarO)==20){
-        return '"X" Parabéns '+placarX+'! <i class="nes-icon is-large like"></i>';
+        return 'X '+mensagemPodio20.replace('@',placarX);
     }
     else if (placarO>placarX && (placarO-placarX)==20){
-        return'"O" Parabéns '+placarO+'! <i class="nes-icon is-large like"></i>';
+        return 'O '+mensagemPodio20.replace('@',placarO);
     }
     else if (placarX>placarO && (placarX-placarO)==30){
-            return '"X" Parabéns '+placarX+'! <i class="nes-icon is-large star"></i>';
+        return 'X '+mensagemPodio30.replace('@',placarX);
     }
     else if (placarO>placarX && (placarO-placarX)==30){
-            return'"O" Parabéns '+placarO+'! <i class="nes-icon is-large star"></i>';        
+        return 'O '+mensagemPodio30.replace('@',placarO);      
     }else{
         return msg;
     }
