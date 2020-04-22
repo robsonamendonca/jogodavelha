@@ -6,6 +6,9 @@ let messageContainer = document.querySelector("#message");
 let messageText = document.querySelector("#message p");
 let secondPlayer="";
 let btnreset = document.querySelector("#reset");
+let pessoaX = document.querySelector(".img-x");
+let pessoaO = document.querySelector(".img-o");
+let roboO = document.querySelector(".img-r-o");
 
 //contador de jogadres
 let player1 =0;
@@ -33,6 +36,7 @@ for(let i=0; i<boxes.length;i++){
             //computar jogada
             if(player1 == player2){
                 player1++;
+                
                 if (secondPlayer == "ai-players"){
                     computerPlay2();
                     player2++;
@@ -73,11 +77,29 @@ function checkEl(player1,player2)
     if(player1 == player2){
         //x
         el = x;
+        exibeIconeJogador("o");
     }else{
         //o
         el = o
+        exibeIconeJogador("x");
     }
     return el;
+}
+
+function exibeIconeJogador(player){
+    if (player == "x"){
+        pessoaO.classList.add("hide");
+        pessoaX.classList.remove("hide");
+    }else{
+        pessoaX.classList.add("hide");
+        if (secondPlayer == "ai-players"){
+            roboO.classList.remove("hide");
+            pessoaO.classList.add("hide");
+        }else{
+            pessoaO.classList.remove("hide");
+            roboO.classList.add("hide");
+        }
+    }
 }
 
 function checkWinCondition(){
@@ -225,10 +247,12 @@ function declareWinner(winner){
         scoreboardX.innerHTML = parseInt(scoreboardX.innerHTML) + 1;
         msg = mensagemX
         placarX =  parseInt(scoreboardX.innerHTML);
+        exibeIconeJogador("x");
     } else if(winner == 'o'){
         scoreboardY.innerHTML = parseInt(scoreboardY.innerHTML) + 1;
         msg = mensagemO;
         placarO =  parseInt(scoreboardY.innerHTML);
+        exibeIconeJogador("o");
     } else {
         msg =mensagemVelha;
     }
@@ -249,21 +273,40 @@ function mensagemRank(placarX,placarO, msg){
     //parabenizer e futyramente guardar records
     if (placarX ==0 && placarO == 10)
     {
-        return 'O '+mensagemPodio10;
+        return '"O" '+mensagemPodio10;
     }else if (placarX ==10 && placarO == 0){
-        return 'X '+mensagemPodio10;
+        return '"X" '+mensagemPodio100;
     }
     else if (placarX>placarO && (placarX-placarO)==20){
-        return 'X '+mensagemPodio20.replace('@',placarX);
+        return '"X" '+mensagemPodio20.replace('@',placarX);
     }
     else if (placarO>placarX && (placarO-placarX)==20){
-        return 'O '+mensagemPodio20.replace('@',placarO);
+        return '"O" '+mensagemPodio20.replace('@',placarO);
     }
     else if (placarX>placarO && (placarX-placarO)==30){
-        return 'X '+mensagemPodio30.replace('@',placarX);
+        return '"X" '+mensagemPodio30.replace('@',placarX);
     }
     else if (placarO>placarX && (placarO-placarX)==30){
-        return 'O '+mensagemPodio30.replace('@',placarO);      
+        return '"O" '+mensagemPodio30.replace('@',placarO);      
+
+    }else if (placarX>placarO && (placarX-placarO)==50){
+            return '"X" '+mensagemPodio50.replace('@',placarX);
+    }
+    else if (placarO>placarX && (placarO-placarX)==50){
+        return '"O" '+mensagemPodio50.replace('@',placarO);  
+
+    }else if (placarX>placarO && (placarX-placarO)==70){
+        return '"X" '+mensagemPodio70.replace('@',placarX);
+    }
+    else if (placarO>placarX && (placarO-placarX)==70){
+        return '"O" '+mensagemPodio70.replace('@',placarO);  
+        
+    } else if (placarX>placarO && (placarX-placarO)==100){
+        return '"X" '+mensagemPodio100.replace('@',placarX);
+    }
+    else if (placarO>placarX && (placarO-placarX)==100){
+        return '"O" '+mensagemPodio100.replace('@',placarO);  
+
     }else{
         return msg;
     }
@@ -274,6 +317,10 @@ function resetJogada(){
         //esconde a mensagem
         setTimeout(() => {
             messageContainer.classList.add("hide");
+            pessoaO.classList.add("hide");
+            pessoaX.classList.add("hide");
+            roboO.classList.add("hide");
+
         }, 3000);
         
         //zera os jogadores
@@ -285,6 +332,9 @@ function resetJogada(){
         for (let i = 0; i < boxesToRemove.length; i++) {
             boxesToRemove[i].parentNode.removeChild(boxesToRemove[i]);            
         }
+
+        //define o x como o 1 primeiro a jogar
+        exibeIconeJogador("x");
 }
 
 function reset(){

@@ -138,6 +138,45 @@ h1 {
 
 }
 
+.bggreen {
+    background-color: green !Important;
+}
+
+.bgred {
+    background-color: red !Important;
+}
+
 .parabens{
     font-size: 15px !Important;
+}
+
+.persona {
+    border-style: none;
+    width: 20%;
+    margin-right: -31px;
+    vertical-align: top;
+}
+
+.bronze {
+    border-style: none;
+    width: 12px;    
+    height: 12px;
+    display: inline-block;
+    background-image: url("/img/bronze.png") no-repeat top left;
+}
+
+.prata {
+    border-style: none;
+    width: 12px;    
+    height: 12px;
+    display: inline-block;
+    background-image: url("/img/.prata.png") no-repeat top left;
+}
+
+.ouro {
+    border-style: none;
+    width: 12px;    
+    height: 12px;
+    display: inline-block;
+    background-image: url("/img/.ouro.png") no-repeat top left;
 }

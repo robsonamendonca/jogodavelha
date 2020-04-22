@@ -19,6 +19,9 @@ var idiomas = {
         'mensagemPodio10': 'Ótimo! 10pts <i class="nes-icon trophy is-large"></i>',
         'mensagemPodio20': 'Ótimo! @pts <i class="nes-icon is-large like"></i>',
         'mensagemPodio30': 'Ótimo! @pts <i class="nes-icon is-large star"></i>',  
+        'mensagemPodio50': 'Ótimo! @pts <i class="nes-icon is-large is-transparent heart"></i>',
+        'mensagemPodio70': 'Ótimo! @pts <i class="nes-icon is-large is-half heart"></i>',
+        'mensagemPodio100': 'Ótimo! @pts <i class="nes-icon is-large heartr"></i>',          
     },
 
     'en-us':{
@@ -33,23 +36,26 @@ var idiomas = {
          'ai-players': 'Against I.A.',
          'txtcomp': 'Share ...',
          'txtcoffee': 'img/busymecoffee-eng.png',
-         'reset': '# Start over',
+         'reset': '# Restart',
          'txtplacar': 'Score',
          'mensagemX': 'Player "X" won !!!',
          'mensagemO': 'Player "O" won !!!',
-         'mensagemVelha': 'Gone old !!!',
+         'mensagemVelha': 'Draw !!!',
          'mensagemPodio10': 'Great! 10pts <i class = "nes-icon trophy is-large"> </i> ',
          'mensagemPodio20': 'Great! @pts <i class = "nes-icon is-large like"> </i> ',
          'mensagemPodio30': 'Great! @pts <i class = "nes-icon is-large star"> </i> ',         
+        'mensagemPodio50': 'Great! @pts <i class="nes-icon is-large is-transparent heart"></i>',
+        'mensagemPodio70': 'Great! @pts <i class="nes-icon is-large is-half heart"></i>',
+        'mensagemPodio100': 'Great! @pts <i class="nes-icon is-large heartr"></i>',  
     },
 
     'pt-es':{
-        'titulo': 'TIC TAC',
+        'titulo': 'Tres em Linea',
          'lngptbr': 'Portugués',
          'lngenus': 'Inglés',
          'lngptes': 'Español',
          'txt': 'Seleccionar',
-         'txth1': 'TIC TAC TOE',
+         'txth1': 'Tres em Linea',
          'sellang': 'Idioma',
          '2-players': '2 jugadores',
          'ai-players': 'Contra I.A.',
@@ -62,7 +68,10 @@ var idiomas = {
          'mensagemVelha': '¡¡¡Viejo !!!',
          'mensagemPodio10': 'Genial! 10pts <i class = "nes-icon trophy is-large"> </i> ',
          'mensagemPodio20': 'Genial! @pts <i class = "nes-icon is-large like"> </i> ',
-         'mensagemPodio30': 'Genial! @pts <i class = "nes-icon is-large star"> </i> ',       
+         'mensagemPodio30': 'Genial! @pts <i class = "nes-icon is-large star"> </i> ',  
+        'mensagemPodio50': 'Genial! @pts <i class="nes-icon is-large is-transparent heart"></i>',
+        'mensagemPodio70': 'Genial! @pts <i class="nes-icon is-large is-half heart"></i>',
+        'mensagemPodio100': 'Genial! @pts <i class="nes-icon is-large heartr"></i>',       
     }
 
 }; 

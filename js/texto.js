@@ -24,6 +24,9 @@ var mensagemVelha='Deu velha!!!';
 var mensagemPodio10=' Ótimo! 10pts<i class="nes-icon trophy is-large"></i>';
 var mensagemPodio20=' Ótimo! @pts<i class="nes-icon is-large like"></i>';
 var mensagemPodio30=' Ótimo! @pts<i class="nes-icon is-large star"></i>';        
+var mensagemPodio50=' Ótimo! @pts<i class="nes-icon is-large is-transparent heart"></i>';      
+var mensagemPodio70=' Ótimo! @pts<i class="nes-icon is-large is-half heart"></i>';      
+var mensagemPodio100=' Ótimo! @pts<i class="nes-icon is-large heart"></i>';      
 
 
  var Textos = function(){
@@ -79,6 +82,10 @@ var mensagemPodio30=' Ótimo! @pts<i class="nes-icon is-large star"></i>';
         mensagemPodio10= txt.getTexto('mensagemPodio10');
         mensagemPodio20= txt.getTexto('mensagemPodio20');
         mensagemPodio30 = txt.getTexto('mensagemPodio30');
+
+        mensagemPodio50= txt.getTexto('mensagemPodio50');
+        mensagemPodio70= txt.getTexto('mensagemPodio70');
+        mensagemPodio100 = txt.getTexto('mensagemPodio100');
 
         //select de opções
         $('#sellang').html(txt.getTexto('sellang'));
