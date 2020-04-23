@@ -275,7 +275,7 @@ function mensagemRank(placarX,placarO, msg){
     {
         return '"O" '+mensagemPodio10;
     }else if (placarX ==10 && placarO == 0){
-        return '"X" '+mensagemPodio100;
+        return '"X" '+mensagemPodio10;
     }
     else if (placarX>placarO && (placarX-placarO)==20){
         return '"X" '+mensagemPodio20.replace('@',placarX);
